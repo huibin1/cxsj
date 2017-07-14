@@ -21,8 +21,8 @@ public class DBBook {
 	public String edition;
 	@Column
 	public Float price;
-	@Column
-	public JSONObject pic_path;
+	@Column	
+	public String pic_path;
 	@Column
 	public String describe;
 	@Column
@@ -63,10 +63,11 @@ public class DBBook {
 	public void setPrice(Float price) {
 		this.price = price;
 	}
-	public JSONObject getPic_path() {
+	
+	public String getPic_path() {
 		return pic_path;
 	}
-	public void setPic_path(JSONObject pic_path) {
+	public void setPic_path(String pic_path) {
 		this.pic_path = pic_path;
 	}
 	public String getDescribe() {
@@ -99,6 +100,13 @@ public class DBBook {
 	public void setCommentid(String commentid) {
 		this.commentid = commentid;
 	}
+	@Override
+	public String toString() {
+		return "DBBook [isbn=" + isbn + ", bookname=" + bookname + ", author=" + author + ", edition=" + edition
+				+ ", price=" + price + ", pic_path=" + pic_path + ", describe=" + describe + ", classifycode="
+				+ classifycode + ", pubtime=" + pubtime + ", publisher=" + publisher + ", commentid=" + commentid + "]";
+	}
+	
 	
 	
 

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "m_student")
 public class DBStudent {
 	@Id
-	private int userid;
+	private String userid;
 	@Column
 	private String name;
 	@Column
@@ -28,10 +28,11 @@ public class DBStudent {
 	private String dormitory;
 	@Column
 	private String grade;
-	public int getUserid() {
+	
+	public String getUserid() {
 		return userid;
 	}
-	public void setUserid(int userid) {
+	public void setUserid(String userid) {
 		this.userid = userid;
 	}
 	public String getName() {

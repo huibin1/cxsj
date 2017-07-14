@@ -11,9 +11,9 @@ public class DBXuanshu {
 	@Id
 	public int xuanshuid;
 	@Column
-	public int teacherid;
+	public String teacherid;
 	@Column
-	public int courseid;
+	public String courseid;
 	@Column
 	public String bookisbns;
 	public int getXuanshuid() {
@@ -22,16 +22,18 @@ public class DBXuanshu {
 	public void setXuanshuid(int xuanshuid) {
 		this.xuanshuid = xuanshuid;
 	}
-	public int getTeacherid() {
+
+	
+	public String getTeacherid() {
 		return teacherid;
 	}
-	public void setTeacherid(int teacherid) {
+	public void setTeacherid(String teacherid) {
 		this.teacherid = teacherid;
 	}
-	public int getCourseid() {
+	public String getCourseid() {
 		return courseid;
 	}
-	public void setCourseid(int courseid) {
+	public void setCourseid(String courseid) {
 		this.courseid = courseid;
 	}
 	public String getBookisbns() {

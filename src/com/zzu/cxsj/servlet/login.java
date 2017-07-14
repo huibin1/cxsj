@@ -39,7 +39,9 @@ public class login extends HttpServlet {
 		request.getSession().setAttribute("usertype", usertype);//student/tesacher
 		request.getSession().setAttribute("userid", userid);
 		request.getSession().setAttribute("username", "wlk");
-		
+		System.out.println(request.getSession().getAttribute("userid"));
+		System.out.println(userid);
+		System.out.println(password);
 		Session session = DBConnection.getFactory().openSession();
 		String hql = "from DBStudent where userid=:userid and password=:password";
 		Query<DBStudent> query = session.createQuery(hql);
@@ -55,11 +57,10 @@ public class login extends HttpServlet {
 			System.out.println(stu.getZhuanye());
 			System.out.println(stu.getClass());
 		}
-		
 		if(usertype.equals("student"))
-			request.getRequestDispatcher("/jsp/welcomeStu.jsp").forward(request, response);
+			response.sendRedirect("./welcomestu.html");
 		else if(usertype.equals("teacher"))
-			request.getRequestDispatcher("/jsp/welcomeTeacher.jsp").forward(request, response);
+			request.getRequestDispatcher("./welcomeTeacher.jsp").forward(request, response);
 		
 		
 	}

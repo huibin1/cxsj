@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script charset="utf-8" src="js/jquery-3.1.1.min.js"></script>
+<script charset="utf-8" src="js/global.js"></script>
+<script charset="utf-8" src="js/bootstrap.min.js"></script>
+<script charset="utf-8" src="js/template.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/member.css">
+<link rel="stylesheet" href="css/order3.css"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1;user-scalable=no;">
+<title>登录</title>
+<script charset="utf-8" src="js/randomimage.js"></script>
+<script charset="utf-8" src="js/login.js"></script>
+<script type="text/javascript">
+		var error = '';
+</script>
+</head>
+<body class="" style="background-color:#fff">
+<header class="header">
+    <div class="fix_nav">
+        <div style="max-width:768px;margin:0 auto;background:#000000;position: relative;">
+            <a class="nav-left back-icon" href="javascript:history.back();">返回</a>
+            <div class="tit" style="font-size:18px;">完善个人信息</div>
+        </div>
+    </div>
+</header>
+<div class="maincontainer">
+   <div class="container itemdetail mini-innner">
+    <div class="row">
+        <div class="col-md-12 tal mt20">
+            <form  id="theForm"  name="theForm" class="form-signin"  action="/p/j_spring_security_check" method="POST" >
+            <input type="hidden" id="returnUrl" name="returnUrl" value="http://m.legendshop.cn/p/orderDetails"/>
+              
+              <input name="j_username"   id="stuname" type="text" style="margin-bottom: -2px;-webkit-appearance:none; " class="form-control" placeholder="姓名" message="姓名" required="true" autofocus=""  tabindex="1" >
+              <br>
+              <input name="j_username"   id="username" type="text" style="margin-bottom: -2px;-webkit-appearance:none; " class="form-control" placeholder="学校" message="学校" required="true" autofocus=""  tabindex="1" >
+              <br>
+              	<input name="j_username"   id="username" type="text" style="margin-bottom: -2px;-webkit-appearance:none; " class="form-control" placeholder="院系" message="院系" required="true" autofocus=""  tabindex="1" >
+              <br>
+              	<input name="j_username"   id="username" type="text" style="margin-bottom: -2px;-webkit-appearance:none; " class="form-control" placeholder="专业" message="专业" required="true" autofocus=""  tabindex="1" >
+              <br>
+              	<input name="j_username"   id="username" type="text" style="margin-bottom: -2px;-webkit-appearance:none; " class="form-control" placeholder="年级" message="年级" required="true" autofocus=""  tabindex="1" >
+              <br>
+               
+                <div class="col-xs-6 p0"><button type="button" class="btn btn-info btn-block" onclick="userLogin();"  tabindex="5" >提  交</button></div>
+              
+                <!--<div class="col-xs-5 p0" style="margin-left:10px;"><button type="button" class="btn btn-default btn-block" onclick="window.location.href='/register'"  tabindex="6" >注 册</button></div>-->
+            </form>
+        </div>
+     </div>
+	</div>
+</div>
+<script type="text/javascript">
+var contextPath = '';
+</script>
+</body>
+</html>

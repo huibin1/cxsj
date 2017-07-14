@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script charset="utf-8" src="js/jquery-3.1.1.min.js"></script>
+<script charset="utf-8" src="js/global.js"></script>
+<script charset="utf-8" src="js/bootstrap.min.js"></script>
+<script charset="utf-8" src="js/template.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/member.css">
+<link rel="stylesheet" href="css/order3.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, 
+	maximum-scale=1;user-scalable=no;">
+		<title>登录</title>
+		<script charset="utf-8" src="js/randomimage.js"></script>
+		<script charset="utf-8" src="js/login.js"></script>
+		<script type="text/javascript">
+			var error = '';
+		</script>
+	</head>
+
+	<body class="" style="background-color:#fff">
+		<header class="header">
+			<div class="fix_nav">
+				<div style="max-width:768px;margin:0 auto;background:#000000;position: relative;">
+					<a class="nav-left back-icon" href="javascript:history.back();">返回</a>
+					<div class="tit" style="font-size:18px;">登录</div>
+				</div>
+			</div>
+		</header>
+		<div class="maincontainer">
+			<div class="container itemdetail mini-innner">
+				<div class="row">
+					<div class="col-md-12 tal mt20">
+						<form id="theForm" name="theForm" class="form-signin" action="./login" method="POST">
+							<input id="username" name="userid" type="text" style="margin-bottom: -2px;
+              	-webkit-appearance:none; " class="form-control" placeholder="帐户名" message="账号" required="true" autofocus="" tabindex="1">
+							<br>
+							<input id="pwd" name="password" type="password" class="form-control" placeholder="请输入密码" message="密码" required="true" style="-webkit-appearance:none;" autocomplete="off" tabindex="2">
+							<input name="usertype" value="student" type="hidden" />
+							<label class="checkbox">
+	                     <input id="_spring_security_remember_me" 
+	                     	name="_spring_security_remember_me" type="checkbox"   
+	                     	tabindex="4" /> 记住我
+	         			 </label>
+
+							<div class="col-xs-6 p0" style="left:25%">
+								<button type="button" class="btn btn-info btn-block" onclick="userLogin();" tabindex="5">登  录</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script charset="utf-8" src="js/jquery-3.1.1.min.js"></script>
+		<script charset="utf-8" src="js/global.js"></script>
+		<script charset="utf-8" src="js/bootstrap.min.js"></script>
+		<script charset="utf-8" src="js/template.js"></script>
+
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/member.css">
+		<link rel="stylesheet" href="css/order3.css">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1,user-scalable=no">
+		<title>首页</title>
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="fix_nav">
+				<div style="max-width:768px;margin:0 auto;height: 44px;position: relative;background:#000000;">
+					<form action="/m_search/list" method="get" id="searchform" name="searchform">
+						<div class="navbar-search left-search">
+							<input type="text" id="keyword" name="keyword" value="" placeholder="搜索商品" class="form-control">
+						</div>
+						<div class="nav-right">
+							<input type="button" value="搜索" onclick="searchproduct();" class="img-responsive" style="text-align:center;background:#ccc;border-radius: 5px;border:none;height:34px;vertical-align:middle;clear:both;padding:0px;width:42px;" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</header>
+
+		<div class="row">
+			<!--产品块-->
+			<div class="tb_box">
+				<h2 class="tab_tit">---本学期需要购买的教材</h2>
+				<div class="tb_type tb_type_even clearfix">
+					<a href="views.html">
+						<div class="hproduct clearfix" style="background:#fff;border-top:0px;">
+							<div class="p-pic"><img style="max-height:100px;margin:auto;" class="img-responsive" src="img/d2.png"></div>
+							<div class="p-info">
+								<p class="p-title">好德</p>
+								<p class="p-origin"><em class="price">¥10.00</em></p>
+								<a class="btn btn-info btn-cart btn-small" onclick="addShopCart();" href="javascript:void(0);">加入购物车</a>
+							</div>
+						</div>
+					</a>
+					<a href="views.html">
+						<div class="hproduct clearfix" style="background:#fff;border-top:0px;">
+							<div class="p-pic"><img style="max-height:100px;margin:auto;" class="img-responsive" src="img/d2.png"></div>
+							<div class="p-info">
+								<p class="p-title">好德</p>
+								<p class="p-origin"><em class="price">¥10.00</em></p>
+								<a class="btn btn-info btn-cart btn-small" onclick="addShopCart();" href="javascript:void(0);">加入购物车</a>
+							</div>
+						</div>
+						<a href="views.html">
+							<div class="hproduct clearfix" style="background:#fff;border-top:0px;">
+								<div class="p-pic"><img style="max-height:100px;margin:auto;" class="img-responsive" src="img/d2.png"></div>
+								<div class="p-info">
+									<p class="p-title">好德</p>
+									<p class="p-origin"><em class="price">¥10.00</em></p>
+									<a class="btn btn-info btn-cart btn-small" onclick="addShopCart();" href="javascript:void(0);">加入购物车</a>
+								</div>
+							</div>
+						</a>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="foot-con">
+				<div class="foot-con_2">
+					<a href="index.html" class="active">
+						<i class="navIcon home"></i>
+						<span class="text">首页</span>
+					</a>
+					<a href="category.html">
+						<i class="navIcon sort"></i>
+						<span class="text">分类</span>
+					</a>
+					<a href="shopcart.html">
+						<i class="navIcon shop"></i>
+						<span class="text">购物车</span>
+					</a>
+					<a href="userhome.html">
+						<i class="navIcon member"></i>
+						<span class="text">我的</span>
+					</a>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			var books;
+
+			function searchproduct() {
+				var keyword = document.getElementById("keyword").value;
+				if(keyword == undefined || keyword == null || keyword == "") {
+					alert("请输入搜索关键字！");
+					return false;
+				}
+				document.getElementById("searchform").submit();
+			}
+			window.onload = function() {
+				$.get("./getBookInfoAction", function(sss) {
+
+					books = JSON.parse(sss)["books"];
+					console.log(books);
+					console.log(books.length);
+
+					$(books).each(function() {
+						console.log(this["isbn"]);
+						console.log(this["author"]);
+						console.log(JSON.parse(this["pic_path"])[0]);
+
+						/*
+						<a href="views.html">
+							<div class="hproduct clearfix" style="background:#fff;border-top:0px;">
+								<div class="p-pic">
+									<img style="max-height:100px;margin:auto;"
+									class="img-responsive" src="img/d2.png">
+								</div>
+								<div class="p-info">
+									<p class="p-title">好德</p>
+									<p class="p-origin"><em class="price">¥10.00</em></p>
+									<a class="btn btn-info btn-cart btn-small" onclick="addShopCart();" href="javascript:void(0);">加入购物车</a>
+								</div>
+							</div>
+						</a>*/
+						var newa = document.createElement("a");
+						newa.setAttribute("href", "views.html");
+						var newadiv = document.createElement("div");
+						newadiv.setAttribute("class", "hproduct clearfix");
+						newadiv.setAttribute("style", "background:#fff;border-top:0px;");
+
+						var newadivpic = document.createElement("div");
+						var newadivpicimg = document.createElement("img");
+						newadivpic.setAttribute("class", "p-pic");
+						newadivpicimg.setAttribute("style", "max-height:100px;margin:auto;");
+						newadivpicimg.setAttribute("class", "img-responsive");
+						newadivpicimg.setAttribute("src", JSON.parse(this["pic_path"])[0]);
+						newadivpic.appendChild(newadivpicimg);
+						newadiv.appendChild(newadivpic);
+
+						var newadivinfo = document.createElement("div");
+						var p1 = document.createElement("p");
+						p1.setAttribute("class", "p-title");
+						p1.innerHTML = this["bookname"];
+						var p2 = document.createElement("p");
+						p2.setAttribute("class", "p-origin");
+						var mem = document.createElement("em");
+						mem.setAttribute("class", "price");
+						mem.innerHTML = this["price"];
+						p2.appendChild(mem);
+
+						var p3 = document.createElement("p");
+						p3.setAttribute("class", "btn btn-info btn-cart btn-small")
+						p3.setAttribute("onclick", "addShopCart()");
+						p3.setAttribute("href", "javascript:void(0);");
+						p3.innerHTML = "加入购物车";
+						newadivinfo.appendChild(p1);
+						newadivinfo.appendChild(p2);
+						newadivinfo.appendChild(p3);
+						newadiv.appendChild(newadivinfo);
+						newa.appendChild(newadiv);
+						document.getElementsByClassName("tb_box")[0].appendChild(newa);
+
+					});
+
+				});
+			}
+		</script>
+	</body>
+
+</html>

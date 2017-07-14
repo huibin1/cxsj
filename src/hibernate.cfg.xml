@@ -15,14 +15,14 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
 <!--     <mapping resource="Student.hbm.xml"/>-->
    		<mapping class="com.zzu.cxsj.dbBean.DBAddress"/>
-<!--    		<mapping class="com.zzu.cxsj.dbBean.DBBook"/>-->
+    		<mapping class="com.zzu.cxsj.dbBean.DBBook"/>
 <!--    		<mapping class="com.zzu.cxsj.dbBean.DBComment"/>-->
 <!--    		<mapping class="com.zzu.cxsj.dbBean.DBCourse"/>-->
     		<mapping class="com.zzu.cxsj.dbBean.DBOrder"/>
    		<mapping class="com.zzu.cxsj.dbBean.DBStudent"/>
 <!--    		<mapping class="com.zzu.cxsj.dbBean.DBTeacher"/>-->
     		<mapping class="com.zzu.cxsj.dbBean.DBXuanke"/>  
-<!--    		<mapping class="com.zzu.cxsj.dbBean.DBXuanshu"/>-->
+    		<mapping class="com.zzu.cxsj.dbBean.DBXuanshu"/>
 		
     </session-factory>  
 
